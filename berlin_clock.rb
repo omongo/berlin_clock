@@ -20,8 +20,8 @@ class BerlinClock
     case minute / 5
       when 0
         min1_display = "4OOOOOOOOOOO"
-      when 1
-        min1_display = "4YOOOOOOOOOO"
+      else
+        min1_display = "4" + "Y" * (minute /5) + "O" * (11 - minute / 5)
     end
 
     second_display + " 2OOOO 3OOOO " + min1_display +" "+ min2_display 

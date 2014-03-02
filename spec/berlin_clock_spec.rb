@@ -68,4 +68,9 @@ describe "Berlin Clock" do
     berlin_clock.setTime "05:00:00"
     expect berlin_clock.display.should eq "1Y 2YOOO 3OOOO 4OOOOOOOOOOO 5OOOO"
   end
+
+  it "should return 1O 2YYYY 3YYYO 4YYRYYRYYRYY 5YYYY when input is 23:59:59" do
+    berlin_clock.setTime "23:59:59"
+    expect berlin_clock.display.should eq "1O 2YYYY 3YYYO 4YYRYYRYYRYY 5YYYY"
+  end
 end

@@ -17,13 +17,17 @@ class BerlinClock
 
     min2_display = "5" + "Y" * (minute % 5) + "O" * (4 - minute % 5) 
     
-    case minute / 5
-      when 0
-        min1_display = "4OOOOOOOOOOO"
+    min1_display = " 4"
+    for i in 1..(minute / 5) do 
+      if i % 3 != 0 
+        min1_display += "Y"
       else
-        min1_display = "4" + "Y" * (minute /5) + "O" * (11 - minute / 5)
+        min1_display += "R"
+      end
     end
 
-    second_display + " 2OOOO 3OOOO " + min1_display +" "+ min2_display 
+    min1_display += "O" * (11 - minute / 5)
+
+    second_display + " 2OOOO 3OOOO" + min1_display +" "+ min2_display 
   end
 end

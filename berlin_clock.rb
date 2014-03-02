@@ -17,7 +17,7 @@ class BerlinClock
     end
 
     min2_display = "5" + "Y" * (minute % 5) + "O" * (4 - minute % 5) 
-    
+    hour2_display = "2" + "Y" * (hour / 5) + "O" * (4 - hour / 5) 
     min1_display = " 4"
     for i in 1..(minute / 5) do 
       if i % 3 != 0 
@@ -31,6 +31,6 @@ class BerlinClock
     
     hour1_display = "3" + "Y" * (hour % 5) + "O" * (4 - hour % 5) 
     
-    second_display + " 2OOOO " + hour1_display + min1_display +" "+ min2_display 
+    second_display +" "+ hour2_display+" " + hour1_display + min1_display +" "+ min2_display 
   end
 end

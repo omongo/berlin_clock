@@ -8,6 +8,15 @@ class BerlinClock
     "#{get_second} #{get_hour} #{get_minute}"
   end
 
+  def run
+    while true
+      @time = Time.now.strftime("%H:%M:%S")
+      print @time + " "
+      puts self.display
+      sleep 1
+    end
+  end
+
   private
   def get_second
     second = @time[6..7].to_i
@@ -23,7 +32,7 @@ class BerlinClock
       min1 += i % 3 != 0 ? "Y" : "R"
     end
     min1 += "O" * (11 - min_div_five)
-    min2 = "Y" * (min_mod_five) + "O" * (4 - min_mod_five) 
+    min2 = "Y" * (min_mod_five) + "O" * (4 - min_mod_five)
     "#{min1} #{min2}"
   end
 
@@ -36,4 +45,9 @@ class BerlinClock
     "#{hour1} #{hour2}"
   end
 
+end
+
+if __FILE__ == $0
+  berlin_clock = BerlinClock.new
+  berlin_clock.run
 end

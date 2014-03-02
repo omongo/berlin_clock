@@ -16,11 +16,12 @@ class BerlinClock
 
     min2_display = "5" + "Y" * (minute % 5) + "O" * (4 - minute % 5) 
     
-    if minute == 5
-      min1_display = "4YOOOOOOOOOO" 
+    minute_div_five = minute / 5
+    if minute_div_five == 1
+      min1_display = "4YOOOOOOOOOO"
     else
       min1_display = "4OOOOOOOOOOO"
     end
-    second_display + " 2OOOO 3OOOO "+ min1_display +" "+ min2_display 
+    second_display + " 2OOOO 3OOOO " + min1_display +" "+ min2_display 
   end
 end

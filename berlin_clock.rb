@@ -26,7 +26,7 @@ class BerlinClock
     min_div_five = minute / 5
     min_mod_five = minute % 5
     min1 = ''
-    min_div_five.times do |i|
+    (1..min_div_five).each do |i|
       min1 += i % 3 != 0 ? 'Y' : 'R'
     end
     min1 += 'O' * (11 - min_div_five)
